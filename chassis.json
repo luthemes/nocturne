@@ -1,3 +1,58 @@
 {
-	"$schema": "https://raw.githubusercontent.com/techkodeninja/chassis/develop/schemas/chassis.schema.json"
+	"$schema": "https://raw.githubusercontent.com/techkodeninja/chassis/develop/schemas/chassis.schema.json",
+	"color": {
+		"global": {
+			"page-background": "#0f1117",
+			"link": "#9db4ff",
+			"link-hover": "#c7d4ff",
+			"accent": "#7c9cff",
+			"accent-text": "#0b0d12"
+		},
+		"header": {
+			"background": "#0b0d12",
+			"text": "#ffffff"
+		},
+		"content": {
+			"background": "#161a23",
+			"border": "#2d3446",
+			"heading": "#ffffff",
+			"text": "#d7dae0",
+			"muted": "#9aa3b2",
+			"divider": "#2d3446",
+			"alt": "#1c2130"
+		},
+		"widget": {
+			"background": "#161a23",
+			"border": "#2d3446",
+			"title": "#ffffff",
+			"text": "#d7dae0"
+		},
+		"footer": {
+			"background": "#0b0d12",
+			"text": "#ffffff"
+		}
+	},
+	"font": {
+		"body": "'Merriweather', serif",
+		"heading": "'Fira Sans', sans-serif",
+		"code": "'JetBrains Mono', monospace"
+	},
+	"spacing": {
+		"header-padding": "s",
+		"nav-link-padding": "xs m",
+		"content-padding": "l",
+		"sidebar-gap": "l"
+	},
+	"width": {
+		"wide": "75rem",
+		"sidebar": "20rem"
+	},
+	"menu": {
+		"toggle": "bottom-left",
+		"design": {
+			"text": "#ffffff",
+			"border": "var( --border-width ) solid #ffffff",
+			"padding": "5px 10px"
+		}
+	}
 }

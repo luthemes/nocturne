@@ -35,6 +35,7 @@ add_filter( 'backdrop/template/path', function() {
  */
 add_action( 'wp_enqueue_scripts', function() {
 
-	// Enqueue Fonts
-	enqueue( 'all' );
+	// Enqueue the fonts set in `chassis.json`: Merriweather for the body, Fira Sans for headings.
+	enqueue( 'merriweather' );
+	enqueue( 'fira-sans' );
 } );
