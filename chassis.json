@@ -27,6 +27,10 @@
 			"title": "#ffffff",
 			"text": "#d7dae0"
 		},
+		"comments": {
+			"background": "#161a23",
+			"border": "#2d3446"
+		},
 		"footer": {
 			"background": "#0b0d12",
 			"text": "#ffffff"
@@ -41,9 +45,11 @@
 		"header-padding": "s",
 		"nav-link-padding": "xs m",
 		"content-padding": "l",
-		"sidebar-gap": "l"
+		"sidebar-gap": "l",
+		"comments-padding": "l",
+		"comments-meta-gap": "l"	
 	},
-	"width": {
+	"layout": {
 		"wide": "75rem",
 		"sidebar": "20rem"
 	},
