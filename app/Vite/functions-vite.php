@@ -52,23 +52,10 @@ function resolve_vite_asset( ?array $manifest, string $path, string $baseUrl ): 
 }
 
 /**
- * Parent theme asset loader.
- *
- * Vite builds (sources in `resources/`) resolve through the manifest. A plain file that
- * Vite doesn't build, such as `public/js/customize-controls.js`, gets its own URL with its
- * modified time as the version, so it works on a copy of the theme that hasn't been built.
+ * Parent theme asset loader (Vite).
  */
 function asset( string $path ): string {
 	$manifest = App::resolve( 'nocturne/vite/parent' );
-	$key      = ltrim( $path, '/' );
-
-	if ( ! isset( $manifest[ $key ] ) && 0 !== strpos( $key, 'resources/' ) ) {
-		$file = get_parent_theme_file_path( $key );
-
-		if ( is_file( $file ) ) {
-			return add_query_arg( 'ver', filemtime( $file ), get_parent_theme_file_uri( $key ) );
-		}
-	}
 
 	$baseUrl  = get_template_directory_uri();
 	return resolve_vite_asset( $manifest, $path, $baseUrl );
