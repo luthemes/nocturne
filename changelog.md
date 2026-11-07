@@ -9,6 +9,7 @@
 - Only Merriweather and Fira Sans are loaded, instead of every bundled font.
 
 ### Fixed
+- The Layout picker's images show at their own size (45×36) instead of doubled to 90 pixels wide.
 - The Layout picker in Customize → Theme: Content sets the layout itself when an image is clicked or chosen with the arrow keys, instead of relying only on the customizer's radio linking, and follows the setting when it changes elsewhere.
 
 ## [0.0.6] - 11.06.2026
