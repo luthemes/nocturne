@@ -1,6 +1,6 @@
 {
 	"name": "@luthemes/nocturne",
-	"description": "Nocturne is a minimal and flexible starter theme designed to provide a clean slate for developers. It focuses on simplicity and performance, making it ideal for building modern ClassicPress themes.",
+	"description": "Nocturne is a dark theme for ClassicPress, built on Chassis.",
 	"version": "0.0.1",
 	"author": "Benjamin Lu",
 	"license": "GPL-2.0+",
@@ -8,10 +8,10 @@
 	"main": "resources/js/app.js",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/backdrop-dev/nocturne.git"
+		"url": "git+https://github.com/luthemes/nocturne.git"
 	},
 	"bugs": {
-		"url": "https://github.com/backdrop-dev/nocturne/issues"
+		"url": "https://github.com/luthemes/nocturne/issues"
 	},
 	"devDependencies": {
 		"node-wp-i18n": "^1.2.3",
