@@ -21,11 +21,6 @@ export default defineConfig( {
 			input: {
 				app: path.resolve( __dirname, 'resources/js/app.js' ),
 				screen: path.resolve( __dirname, 'resources/scss/screen.scss' ),
-				'customize-controls': path.resolve( __dirname, 'resources/js/customize-controls.js' ),
-				// The stylesheet gets a -style suffix so its output name doesn't collide with
-				// the script of the same name.
-				'customize-controls-style': path.resolve( __dirname, 'resources/scss/customize-controls.scss' ),
-				'customize-preview': path.resolve( __dirname, 'resources/js/customize-preview.js' ),
 			},
 			output: {
 				entryFileNames: 'js/[name]-[hash].js',
