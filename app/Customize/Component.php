@@ -19,9 +19,8 @@ use Backdrop\App;
 use Backdrop\Contracts\Bootable;
 use Nocturne\Tools\Collection;
 
-use Backdrop\Customize\Component as Customize;
-
 use function Nocturne\Vite\asset;
+use Backdrop\Customize\Component as Customize;
 
 class Component extends Customize implements Bootable {
 
@@ -52,12 +51,11 @@ class Component extends Customize implements Bootable {
 	 */
 	public function controlsEnqueue() {
 
-		// The customizer's own style and script are plain files in `public/`, loaded as they
-		// are, so the customizer works on a copy of the theme that hasn't been built. `asset()`
-		// gives a plain file its own URL, versioned by its modified time.
-		wp_enqueue_style( 'nocturne-customize-controls', asset( 'public/css/customize-controls.css' ), [], null );
+		// Enqueue controls style.
+		wp_enqueue_style( 'nocturne-customize-controls', asset( 'resources/scss/customize-controls.scss' ), [], null );
 
-		wp_enqueue_script( 'nocturne-customize-controls', asset( 'public/js/customize-controls.js' ), [ 'customize-controls' ], null, true );
+		// Enqueue controls script.
+		wp_enqueue_script( 'nocturne-customize-controls', asset( 'resources/js/customize-controls.js' ), [ 'customize-controls' ], null, true );
 
 		// Set up a new collection to store our JSON.
 		$json = new Collection();
@@ -80,8 +78,8 @@ class Component extends Customize implements Bootable {
 	 */
 	public function previewEnqueue() {
 
-		// Enqueue preview script (a plain file, like the controls script).
-		wp_enqueue_script( 'nocturne-customize-preview', asset( 'public/js/customize-preview.js' ), [ 'customize-preview' ], null, true );
+		// Enqueue preview script.
+		wp_enqueue_script( 'nocturne-customize-preview', asset( 'resources/js/customize-preview.js' ), [ 'customize-preview' ], null, true );
 
 		// Set up a new collection to store our JSON.
 		$json = new Collection();
@@ -94,6 +92,4 @@ class Component extends Customize implements Bootable {
 		// Pass JSON to the preview script.
 		wp_localize_script( 'nocturne-customize-preview', 'nocturneCustomizePreview', $json->jsonSerialize() );
 	}
-
-
 }

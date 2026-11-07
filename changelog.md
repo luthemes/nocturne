@@ -10,7 +10,6 @@
 
 ### Fixed
 - The Layout picker in Customize → Theme: Content sets the layout itself when an image is clicked or chosen with the arrow keys, instead of relying only on the customizer's radio linking, and follows the setting when it changes elsewhere.
-- The customizer works on a copy of the theme that hasn't been built. Its script, preview script and styles are now plain files in `public/js/` and `public/css/`, loaded directly, instead of Vite builds. Before, an unbuilt theme loaded none of them, so the Layout picker showed bare radio buttons and choosing a layout didn't change the preview.
 
 ## [0.0.6] - 11.06.2026
 ### Added
