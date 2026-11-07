@@ -1,7 +1,7 @@
 {
-    "name": "backdrop-dev/nocturne",
+    "name": "luthemes/nocturne",
     "type": "classicpress-theme",
-    "description": "Nocturne is a minimal and flexible starter theme designed to provide a clean slate for developers. It focuses on simplicity and performance, making it ideal for building modern ClassicPress themes.",
+    "description": "Nocturne is a dark theme for ClassicPress, built on Chassis.",
     "keywords": [
         "classicpress",
         "theme"
@@ -24,7 +24,7 @@
         "php": ">=7.4",
         "backdrop-dev/framework": "dev-develop#7989430268cc98d99a993e0e6bd6f11d3f418a8a",
         "backdrop-dev/fonts": "dev-develop#c64cb8aafbacae0eea6231b0d86228c8a5d8940d",
-        "techkodeninja/chassis": "^0.1"
+        "techkodeninja/chassis": "^0.1.5"
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "*",

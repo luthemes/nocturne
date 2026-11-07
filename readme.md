@@ -1,12 +1,12 @@
 # Nocturne
 
-Nocturne is a starter theme for ClassicPress.
+Nocturne is a dark theme for ClassicPress, built on [Chassis](https://github.com/techkodeninja/chassis). It has the same design as the Novaris version of Nocturne ([novaris-dev/nocturne](https://github.com/novaris-dev/nocturne)).
 
-The theme's primary goal is to offer a modern development experience for ClassicPress theme authors while sticking as close to possible to ClassicPress standards as we can.  Sometimes those things don't always mesh well.  This theme aims to balance that.
+This readme is for developing the theme. For installing and using it, see `readme.txt`.
 
 ## Requirements
 
-There's a few requirements in order to develop a new theme or contribute back to the project:
+To build the theme or contribute to it, you need:
 
 * PHP 7.4+ (preferably 8+).
 * [Git](https://git-scm.com/) for version control.
@@ -37,7 +37,7 @@ npm run build
 
 `npm run build` builds the assets, then runs `npm run export`, which copies the theme into `dist/nocturne/`. Zip that folder and upload it in *Appearance → Themes → Add New*.
 
-The copy has `style.css`, `functions.php`, `index.php`, `chassis.json`, `readme.txt`, `screenshot.png` if you add one, and the `app`, `config`, `public` and `vendor` folders. It leaves out the sources (`resources`, `bin`), the dev config and `node_modules`. From `vendor`, it removes Composer's tools and any `.git` folders.
+The copy has `style.css`, `functions.php`, `index.php`, `chassis.json`, `readme.txt`, `screenshot.png`, and the `app`, `config`, `public` and `vendor` folders. It leaves out the sources (`resources`, `bin`), the dev config and `node_modules`. From `vendor`, it removes Composer's tools and any `.git` folders.
 
 The export stops if the assets aren't built, or if `vendor` still has the dev tools from a plain `composer install`. The folder is named after the text domain, so it follows `composer rename`. `bin/export-theme.cjs` lists what's copied.
 
@@ -49,7 +49,7 @@ What comes from where:
 
 * **Chassis:** the page skeleton (`.app`, `.app-header`, `.app-nav`, `.app-content`, `.app-main`, `.app-sidebar`, `.app-footer`), the mobile Menu button and dropdowns, posts (`.entry__*`), widgets, comments, pagination, buttons, cards and the grid.
 * **`chassis.json`:** the design: colors, fonts, spacing, widths and where the Menu button sits. It holds Nocturne's dark design, the same one the Novaris version of Nocturne ([novaris-dev/nocturne](https://github.com/novaris-dev/nocturne)) uses, so keep the two files in sync. Change a value, then refresh. There's nothing to build. See the [settings](https://github.com/techkodeninja/chassis#set-the-design-with-chassisjson).
-* **`resources/scss/`:** Nocturne's own styles, for anything Chassis doesn't cover. `screen.scss` is empty, since Nocturne is a starter theme. Load Chassis's tools in a partial with `@use 'techkodeninja/chassis/scss/02.tools' as ui;` to use its breakpoints (`ui.up( medium )`) and values (`ui.space( m )`, `ui.color( content-muted )`).
+* **`resources/scss/`:** Nocturne's own styles, for anything Chassis doesn't cover. `screen.scss` is empty, since Chassis and `chassis.json` cover Nocturne's design. Load Chassis's tools in a partial with `@use 'techkodeninja/chassis/scss/02.tools' as ui;` to use its breakpoints (`ui.up( medium )`) and values (`ui.space( m )`, `ui.color( content-muted )`).
 * **Customize → Theme: Content → Layout:** left sidebar, right sidebar (the default) or no sidebar, which sets Chassis's `app-content--sidebar-left` or `--sidebar-right`.
 
 ## Renaming
@@ -87,7 +87,7 @@ It rewrites:
 It then rebuilds Composer's autoloader and sets `from` to your new details, so you can run it again later. `Name`, `Slug` and `Namespace` are required; the other fields are optional.
 
 It doesn't touch `vendor`, `node_modules`, built assets, images or `changelog.md`. Two things it leaves for you:
-* The package vendor names: `backdrop-dev/` in `composer.json` and `@luthemes/` in `package.json`.
+* The package vendor names: `luthemes/` in `composer.json` and `@luthemes/` in `package.json`.
 * `package-lock.json`, which `npm install` updates.
 
 Check the result with `git diff`.
@@ -108,12 +108,12 @@ Translators make `nocturne-{locale}.po` from it, for example `nocturne-de_DE.po`
 
 ## Starting points
 
-Nocturne is a starting point, so some things are switched on but left for you to finish, and some files are samples. Wire them up or delete them:
+Some things are switched on but not finished yet, and some files are samples. Wire them up or delete them:
 
 | What | Where | State |
 |---|---|---|
 | Your theme's name, author and URIs | `themerename.json` | Nocturne's own. Fill in `to` and run `composer rename` (see [Renaming](#renaming)). `style.css` stays at version `0.0.1` for your first release. |
-| Design | `chassis.json` | Empty, so Chassis's defaults show. Add colors, fonts and spacing. |
+| Design | `chassis.json` | Nocturne's dark design. Change colors, fonts and spacing there. |
 | Your own styles and scripts | `resources/scss/screen.scss`, `resources/js/app.js` | Empty. Each loads once it has something in it. |
 | Header image | `app/CustomHeader/`, `public/images/headers/` | Header image support is on, with three sample images, but no template prints it. Add it to `public/views/header/default.php`, or remove the component. "Display site title and tagline" isn't wired up either. |
 | Meta icons | `public/svg/meta-icons/` | Calendar, comment and user icons, not used yet. For post metadata, if you want icons. |
