@@ -1,0 +1,35 @@
+{
+	"name": "@luthemes/nocturne",
+	"description": "Nocturne is a minimal and flexible starter theme designed to provide a clean slate for developers. It focuses on simplicity and performance, making it ideal for building modern ClassicPress themes.",
+	"version": "0.0.1",
+	"author": "Benjamin Lu",
+	"license": "GPL-2.0+",
+	"homepage": "https://luthemes.com/portfolio/nocturne",
+	"main": "resources/js/app.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/backdrop-dev/nocturne.git"
+	},
+	"bugs": {
+		"url": "https://github.com/backdrop-dev/nocturne/issues"
+	},
+	"devDependencies": {
+		"node-wp-i18n": "^1.2.3",
+		"sass": "^1.93.3",
+		"vite": "^7.3.7"
+	},
+	"scripts": {
+		"build": "npm run prod && npm run export",
+		"watch": "vite build --watch",
+		"prod": "vite build",
+		"export": "node bin/export-theme.cjs",
+		"pot": "node bin/make-pot.cjs"
+	},
+	"overrides": {
+		"rollup": "^4.59.0",
+		"immutable": "^5.1.5"
+	},
+	"engines": {
+		"node": "^20.19.0 || >=22.12.0"
+	}
+}
