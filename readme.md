@@ -41,6 +41,18 @@ The copy has `style.css`, `functions.php`, `index.php`, `chassis.json`, `readme.
 
 The export stops if the assets aren't built, or if `vendor` still has the dev tools from a plain `composer install`. The folder is named after the text domain, so it follows `composer rename`. `bin/export-theme.cjs` lists what's copied.
 
+## Releasing
+
+Publishing a release on GitHub builds the zip for you. `.github/workflows/release.yml`:
+
+1. checks that the release tag (`0.0.1` or `v0.0.1`) matches the `Version:` in `style.css`, and stops if it doesn't;
+2. installs the dependencies and checks the Node tools for known high or critical vulnerabilities;
+3. builds the translation template (`npm run pot`), so the zip has one that matches this release's text;
+4. builds and exports the theme (`npm run build`);
+5. zips `dist/nocturne/` as `nocturne.{version}.zip` and attaches it to the release.
+
+So to release: update `Version:` in `style.css` and the changelog, merge to `develop`, then publish a release on GitHub with the same version as its tag.
+
 ## Chassis
 
 Nocturne is built on [Chassis](https://github.com/techkodeninja/chassis), the shared structure and UI building blocks used by both ClassicPress themes and Novaris sites. `app/framework.php` registers its service provider, which loads Chassis's CSS, its ClassicPress add-on, the menu script and the theme's `chassis.json`.
