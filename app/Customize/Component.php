@@ -19,6 +19,7 @@ use Backdrop\App;
 use Backdrop\Contracts\Bootable;
 use Nocturne\Tools\Collection;
 
+use function Nocturne\Vite\asset;
 use Backdrop\Customize\Component as Customize;
 
 class Component extends Customize implements Bootable {
@@ -50,11 +51,11 @@ class Component extends Customize implements Bootable {
 	 */
 	public function controlsEnqueue() {
 
-		// The customizer's own style and script are plain files in `public/`, loaded as they
-		// are, so the customizer works on a copy of the theme that hasn't been built.
-		wp_enqueue_style( 'nocturne-customize-controls', $this->fileUrl( 'public/css/customize-controls.css' ), [], $this->fileVersion( 'public/css/customize-controls.css' ) );
+		// Enqueue controls style.
+		wp_enqueue_style( 'nocturne-customize-controls', asset( 'resources/scss/customize-controls.scss' ), [], null );
 
-		wp_enqueue_script( 'nocturne-customize-controls', $this->fileUrl( 'public/js/customize-controls.js' ), [ 'customize-controls' ], $this->fileVersion( 'public/js/customize-controls.js' ), true );
+		// Enqueue controls script.
+		wp_enqueue_script( 'nocturne-customize-controls', asset( 'resources/js/customize-controls.js' ), [ 'customize-controls' ], null, true );
 
 		// Set up a new collection to store our JSON.
 		$json = new Collection();
@@ -77,8 +78,8 @@ class Component extends Customize implements Bootable {
 	 */
 	public function previewEnqueue() {
 
-		// Enqueue preview script (a plain file, like the controls script).
-		wp_enqueue_script( 'nocturne-customize-preview', $this->fileUrl( 'public/js/customize-preview.js' ), [ 'customize-preview' ], $this->fileVersion( 'public/js/customize-preview.js' ), true );
+		// Enqueue preview script.
+		wp_enqueue_script( 'nocturne-customize-preview', asset( 'resources/js/customize-preview.js' ), [ 'customize-preview' ], null, true );
 
 		// Set up a new collection to store our JSON.
 		$json = new Collection();
@@ -90,34 +91,5 @@ class Component extends Customize implements Bootable {
 
 		// Pass JSON to the preview script.
 		wp_localize_script( 'nocturne-customize-preview', 'nocturneCustomizePreview', $json->jsonSerialize() );
-	}
-
-	/**
-	 * Returns the URL of a file in the parent theme.
-	 *
-	 * @since  0.0.1
-	 * @access protected
-	 * @param  string $file Path from the theme's root folder.
-	 * @return string
-	 */
-	protected function fileUrl( string $file ): string {
-
-		return get_parent_theme_file_uri( $file );
-	}
-
-	/**
-	 * Returns a version for a file's URL that changes whenever the file does, so browsers
-	 * don't keep an old copy after an update.
-	 *
-	 * @since  0.0.1
-	 * @access protected
-	 * @param  string $file Path from the theme's root folder.
-	 * @return string|null
-	 */
-	protected function fileVersion( string $file ) {
-
-		$path = get_parent_theme_file_path( $file );
-
-		return is_file( $path ) ? (string) filemtime( $path ) : null;
 	}
 }
