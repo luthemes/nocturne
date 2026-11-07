@@ -47,6 +47,7 @@
 		"content-padding": "l",
 		"sidebar-gap": "l",
 		"comments-padding": "l",
+		"comments-gap": "l",
 		"comments-meta-gap": "l"	
 	},
 	"layout": {
