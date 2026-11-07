@@ -40,7 +40,7 @@ return [
 	# ----------------------------------------------------------------------
 	#
 	# Handles the content theme mods.
-	'theme_content_layout' => 'left-sidebar',
+	'theme_content_layout' => 'right-sidebar',
 
 	'featured_image_size' => 'nocturne-landscape-medium',
 

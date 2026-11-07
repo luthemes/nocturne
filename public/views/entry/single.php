@@ -1,11 +1,11 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry__header">
-		<?php Backdrop\Post\display_title( [ 'class' => 'entry__title' ] ); ?>
 		<div class="entry__metadata">
 			<?php Backdrop\Post\display_date(); ?>
 			<?php Backdrop\Post\display_author( [ 'before' => Nocturne\sep() ] ); ?>
 			<?php Backdrop\Post\display_comments_link( [ 'before' => Nocturne\sep() ] ); ?>
 		</div>
+		<?php Backdrop\Post\display_title( [ 'class' => 'entry__title' ] ); ?>
 	</header>
 	<?php if ( has_post_thumbnail() ) : ?>
 		<figure class="entry__thumbnail">

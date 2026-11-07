@@ -48,9 +48,9 @@ Nocturne is built on [Chassis](https://github.com/techkodeninja/chassis), the sh
 What comes from where:
 
 * **Chassis:** the page skeleton (`.app`, `.app-header`, `.app-nav`, `.app-content`, `.app-main`, `.app-sidebar`, `.app-footer`), the mobile Menu button and dropdowns, posts (`.entry__*`), widgets, comments, pagination, buttons, cards and the grid.
-* **`chassis.json`:** the design: colors, fonts, spacing, widths and where the Menu button sits. It's empty, so Nocturne uses Chassis's defaults; add only what you change, then refresh. There's nothing to build. See the [settings](https://github.com/techkodeninja/chassis#set-the-design-with-chassisjson).
+* **`chassis.json`:** the design: colors, fonts, spacing, widths and where the Menu button sits. It holds Nocturne's dark design, the same one the Novaris version of Nocturne ([novaris-dev/nocturne](https://github.com/novaris-dev/nocturne)) uses, so keep the two files in sync. Change a value, then refresh. There's nothing to build. See the [settings](https://github.com/techkodeninja/chassis#set-the-design-with-chassisjson).
 * **`resources/scss/`:** Nocturne's own styles, for anything Chassis doesn't cover. `screen.scss` is empty, since Nocturne is a starter theme. Load Chassis's tools in a partial with `@use 'techkodeninja/chassis/scss/02.tools' as ui;` to use its breakpoints (`ui.up( medium )`) and values (`ui.space( m )`, `ui.color( content-muted )`).
-* **Customize → Theme: Content → Layout:** left sidebar, right sidebar or no sidebar, which sets Chassis's `app-content--sidebar-left` or `--sidebar-right`.
+* **Customize → Theme: Content → Layout:** left sidebar, right sidebar (the default) or no sidebar, which sets Chassis's `app-content--sidebar-left` or `--sidebar-right`.
 
 ## Renaming
 

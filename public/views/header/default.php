@@ -15,7 +15,7 @@
 ?>
 <div class="app">
 
-	<header id="masthead" class="app-header">
+	<header id="masthead" class="app-header app-header--full">
 		<div class="app-header__inner container">
 
 			<div class="app-header__branding">
