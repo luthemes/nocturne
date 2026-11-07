@@ -1,6 +1,9 @@
 # Changelog
 
 ## [Unreleased]
+### Added
+- `screenshot.png` (1200×900) for the Themes screen, showing the dark design with posts and a right sidebar.
+
 ### Changed
 - Nocturne now has the same dark design as the Novaris version ([novaris-dev/nocturne](https://github.com/novaris-dev/nocturne)): `chassis.json` holds its colors, fonts (Merriweather, Fira Sans, JetBrains Mono), spacing, widths and Menu button, copied from that theme.
 - The header runs the full width of the screen (`.app-header--full`).
