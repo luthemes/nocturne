@@ -1,5 +1,10 @@
 # Changelog
 
+## [Unreleased]
+### Changed
+- `chassis.json` uses Chassis's `settings` and `styles` shape: each color is named once in `settings.palette` and used as `@name`, and each part of the page has its own group (`header`, `primary-menu`, `menu-button`, `content`, `post`, `widget`, `comments`, `footer`). The design is unchanged: the file produces the same CSS as before.
+- Requires Chassis 0.1.7 or later, which reads that shape.
+
 ## [0.0.1] - 11.06.2026
 
 First release of Nocturne, a dark theme for ClassicPress built on [Chassis](https://github.com/techkodeninja/chassis), made from the Momentum starter theme.

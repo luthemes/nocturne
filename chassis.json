@@ -1,65 +1,81 @@
 {
 	"$schema": "https://raw.githubusercontent.com/techkodeninja/chassis/develop/schemas/chassis.schema.json",
-	"color": {
-		"global": {
-			"page-background": "#0f1117",
-			"link": "#9db4ff",
-			"link-hover": "#c7d4ff",
-			"accent": "#7c9cff",
-			"accent-text": "#0b0d12"
+	"settings": {
+		"palette": {
+			"night": "#0b0d12",
+			"ink":   "#0f1117",
+			"slate": "#161a23",
+			"steel": "#1c2130",
+			"line":  "#2d3446",
+			"snow":  "#ffffff",
+			"mist":  "#d7dae0",
+			"fog":   "#9aa3b2",
+			"blue":  "#7c9cff",
+			"sky":   "#9db4ff",
+			"ice":   "#c7d4ff"
 		},
-		"header": {
-			"background": "#0b0d12",
-			"text": "#ffffff"
+		"font": {
+			"body":    "'Merriweather', serif",
+			"heading": "'Fira Sans', sans-serif",
+			"code":    "'JetBrains Mono', monospace"
 		},
-		"content": {
-			"background": "#161a23",
-			"border": "#2d3446",
-			"heading": "#ffffff",
-			"text": "#d7dae0",
-			"muted": "#9aa3b2",
-			"divider": "#2d3446",
-			"alt": "#1c2130"
-		},
-		"widget": {
-			"background": "#161a23",
-			"border": "#2d3446",
-			"title": "#ffffff",
-			"text": "#d7dae0"
-		},
-		"comments": {
-			"background": "#161a23",
-			"border": "#2d3446"
-		},
-		"footer": {
-			"background": "#0b0d12",
-			"text": "#ffffff"
+		"layout": {
+			"width":   "75rem",
+			"sidebar": "20rem"
 		}
 	},
-	"font": {
-		"body": "'Merriweather', serif",
-		"heading": "'Fira Sans', sans-serif",
-		"code": "'JetBrains Mono', monospace"
-	},
-	"spacing": {
-		"header-padding": "s",
-		"nav-link-padding": "xs m",
-		"content-padding": "l",
-		"sidebar-gap": "l",
-		"comments-padding": "l",
-		"comments-gap": "l",
-		"comments-meta-gap": "l"	
-	},
-	"layout": {
-		"wide": "75rem",
-		"sidebar": "20rem"
-	},
-	"menu": {
-		"toggle": "bottom-left",
-		"design": {
-			"text": "#ffffff",
-			"border": "var( --border-width ) solid #ffffff",
-			"padding": "5px 10px"
+	"styles": {
+		"color": {
+			"background":  "@ink",
+			"text":        "@mist",
+			"muted":       "@fog",
+			"divider":     "@line",
+			"alt":         "@steel",
+			"accent":      "@blue",
+			"accent-text": "@night"
+		},
+		"elements": {
+			"link": {
+				"color": { "text": "@sky" },
+				":hover": { "color": { "text": "@ice" } }
+			},
+			"heading": {
+				"color": { "text": "@snow" }
+			}
+		},
+		"header": {
+			"color": { "background": "@night", "text": "@snow" },
+			"spacing": { "padding": "s" }
+		},
+		"primary-menu": {
+			"link": { "spacing": { "padding": "xs m" } }
+		},
+		"menu-button": {
+			"position": "bottom-left",
+			"color": { "text": "@snow" },
+			"border": { "color": "@snow" },
+			"spacing": { "padding": "5px 10px" }
+		},
+		"content": {
+			"spacing": { "padding": "l", "gap": "l" }
+		},
+		"post": {
+			"color": { "background": "@slate" },
+			"border": { "color": "@line" }
+		},
+		"widget": {
+			"color": { "background": "@slate", "text": "@mist" },
+			"border": { "color": "@line" },
+			"title": { "color": { "text": "@snow" } }
+		},
+		"comments": {
+			"color": { "background": "@slate" },
+			"border": { "color": "@line" },
+			"spacing": { "padding": "l", "margin": "l" },
+			"meta": { "spacing": { "margin": "l" } }
+		},
+		"footer": {
+			"color": { "background": "@night", "text": "@snow" }
 		}
 	}
 }

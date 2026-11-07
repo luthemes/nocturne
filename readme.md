@@ -60,7 +60,7 @@ Nocturne is built on [Chassis](https://github.com/techkodeninja/chassis), the sh
 What comes from where:
 
 * **Chassis:** the page skeleton (`.app`, `.app-header`, `.app-nav`, `.app-content`, `.app-main`, `.app-sidebar`, `.app-footer`), the mobile Menu button and dropdowns, posts (`.entry__*`), widgets, comments, pagination, buttons, cards and the grid.
-* **`chassis.json`:** the design: colors, fonts, spacing, widths and where the Menu button sits. It holds Nocturne's dark design, the same one the Novaris version of Nocturne ([novaris-dev/nocturne](https://github.com/novaris-dev/nocturne)) uses, so keep the two files in sync. Change a value, then refresh. There's nothing to build. See the [settings](https://github.com/techkodeninja/chassis#set-the-design-with-chassisjson).
+* **`chassis.json`:** the design, in Chassis's `settings` and `styles` shape. `settings.palette` names each color once (`slate`, `line`, `snow`…), and `styles` uses them as `@slate` for each part of the page: `header`, `primary-menu`, `menu-button`, `content`, `post`, `widget`, `comments`, `footer`. It holds Nocturne's dark design, the same one the Novaris version of Nocturne ([novaris-dev/nocturne](https://github.com/novaris-dev/nocturne)) uses, so keep the two files in sync. Change a value, then refresh. There's nothing to build. See [`settings` and `styles`](https://github.com/techkodeninja/chassis#settings-and-styles).
 * **`resources/scss/`:** Nocturne's own styles, for anything Chassis doesn't cover. `screen.scss` is empty, since Chassis and `chassis.json` cover Nocturne's design. Load Chassis's tools in a partial with `@use 'techkodeninja/chassis/scss/02.tools' as ui;` to use its breakpoints (`ui.up( medium )`) and values (`ui.space( m )`, `ui.color( content-muted )`).
 * **Customize → Theme: Content → Layout:** left sidebar, right sidebar (the default) or no sidebar, which sets Chassis's `app-content--sidebar-left` or `--sidebar-right`.
 
@@ -125,7 +125,7 @@ Some things are switched on but not finished yet, and some files are samples. Wi
 | What | Where | State |
 |---|---|---|
 | Your theme's name, author and URIs | `themerename.json` | Nocturne's own. Fill in `to` and run `composer rename` (see [Renaming](#renaming)). `style.css` stays at version `0.0.1` for your first release. |
-| Design | `chassis.json` | Nocturne's dark design. Change colors, fonts and spacing there. |
+| Design | `chassis.json` | Nocturne's dark design. Change a palette color in `settings.palette`, or a part of the page in `styles`. |
 | Your own styles and scripts | `resources/scss/screen.scss`, `resources/js/app.js` | Empty. Each loads once it has something in it. |
 | Header image | `app/CustomHeader/`, `public/images/headers/` | Header image support is on, with three sample images, but no template prints it. Add it to `public/views/header/default.php`, or remove the component. "Display site title and tagline" isn't wired up either. |
 | Meta icons | `public/svg/meta-icons/` | Calendar, comment and user icons, not used yet. For post metadata, if you want icons. |

@@ -36,7 +36,7 @@ The sidebar only shows when the Primary widget area has widgets. Add a widget in
 
 = How do I change the colors? =
 
-Colors, fonts and spacing are in `chassis.json` in the theme's folder. To keep your changes through updates, make a child theme with its own `chassis.json`. It only needs the settings you change.
+Colors, fonts and spacing are in `chassis.json` in the theme's folder. The colors are named once in `settings.palette`, so changing one there changes it everywhere it's used. To keep your changes through updates, make a child theme with its own `chassis.json`. It only needs the settings you change.
 
 == Copyright ==
 
