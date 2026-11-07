@@ -52,9 +52,9 @@ class Component extends Customize implements Bootable {
 
 		// The customizer's own style and script are plain files in `public/`, loaded as they
 		// are, so the customizer works on a copy of the theme that hasn't been built.
-		wp_enqueue_style( 'nocturne-customize-controls', $this->fileUrl( 'public/css/customize-controls.css' ), [], $this->fileVersion( 'public/css/customize-controls.css' ) );
+		wp_enqueue_style( 'nocturne-customize-controls', get_parent_theme_file_uri( 'public/css/customize-controls.css' ), [], $this->fileVersion( 'public/css/customize-controls.css' ) );
 
-		wp_enqueue_script( 'nocturne-customize-controls', $this->fileUrl( 'public/js/customize-controls.js' ), [ 'customize-controls' ], $this->fileVersion( 'public/js/customize-controls.js' ), true );
+		wp_enqueue_script( 'nocturne-customize-controls', get_parent_theme_file_uri( 'public/js/customize-controls.js' ), [ 'customize-controls' ], $this->fileVersion( 'public/js/customize-controls.js' ), true );
 
 		// Set up a new collection to store our JSON.
 		$json = new Collection();
@@ -78,7 +78,7 @@ class Component extends Customize implements Bootable {
 	public function previewEnqueue() {
 
 		// Enqueue preview script (a plain file, like the controls script).
-		wp_enqueue_script( 'nocturne-customize-preview', $this->fileUrl( 'public/js/customize-preview.js' ), [ 'customize-preview' ], $this->fileVersion( 'public/js/customize-preview.js' ), true );
+		wp_enqueue_script( 'nocturne-customize-preview', get_parent_theme_file_uri( 'public/js/customize-preview.js' ), [ 'customize-preview' ], $this->fileVersion( 'public/js/customize-preview.js' ), true );
 
 		// Set up a new collection to store our JSON.
 		$json = new Collection();
@@ -92,18 +92,6 @@ class Component extends Customize implements Bootable {
 		wp_localize_script( 'nocturne-customize-preview', 'nocturneCustomizePreview', $json->jsonSerialize() );
 	}
 
-	/**
-	 * Returns the URL of a file in the parent theme.
-	 *
-	 * @since  0.0.1
-	 * @access protected
-	 * @param  string $file Path from the theme's root folder.
-	 * @return string
-	 */
-	protected function fileUrl( string $file ): string {
-
-		return get_parent_theme_file_uri( $file );
-	}
 
 	/**
 	 * Returns a version for a file's URL that changes whenever the file does, so browsers
