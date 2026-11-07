@@ -5,6 +5,7 @@
 First release of Nocturne, a dark theme for ClassicPress built on [Chassis](https://github.com/techkodeninja/chassis), made from the Momentum starter theme.
 
 ### Added
+- `.github/workflows/release.yml`: publishing a GitHub release builds the theme, with a fresh translation template, and attaches `nocturne.{version}.zip` to the release.
 - Nocturne's description, tags, `readme.txt` and package links (`luthemes/nocturne`).
 - `screenshot.png` (1200×900) for the Themes screen, showing the dark design with posts and a right sidebar.
 
