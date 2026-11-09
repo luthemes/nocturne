@@ -22,7 +22,7 @@
     },
     "require": {
         "php": ">=7.4",
-        "backdrop-dev/framework": "dev-develop#7989430268cc98d99a993e0e6bd6f11d3f418a8a",
+        "backdrop-dev/framework": "^1.0.1",
         "backdrop-dev/fonts": "^1.0.2",
         "techkodeninja/chassis": "^0.1.7"
     },

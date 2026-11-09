@@ -3,7 +3,7 @@
 Contributors: luthemes
 Tags: dark, blog, two-columns, left-sidebar, right-sidebar, custom-menu, featured-images, footer-widgets, threaded-comments, translation-ready
 Requires PHP: 7.4
-Stable tag: 0.0.1
+Stable tag: 0.0.2
 License: GNU General Public License v2.0 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -69,6 +69,11 @@ Screenshot and layout images, Copyright 2026 Benjamin Lu
 License: GPL-2.0-or-later
 
 == Changelog ==
+
+= 0.0.2 =
+* chassis.json uses the settings and styles shape, with a color palette. The design is unchanged.
+* Requires the tagged Backdrop Framework 1.0.1 and Backdrop Fonts 1.0.2. Framework 1.0.1 fixes a crash on sites that also run a plugin built on Backdrop 2.0.
+* The zip is 6 MB smaller: unused images are removed.
 
 = 0.0.1 =
 * First release. See changelog.md for details.
