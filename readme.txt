@@ -2,8 +2,9 @@
 
 Contributors: luthemes
 Tags: dark, blog, two-columns, left-sidebar, right-sidebar, custom-menu, featured-images, footer-widgets, threaded-comments, translation-ready
+Requires CP: 2.0
 Requires PHP: 7.4
-Stable tag: 0.0.2
+Stable tag: 0.0.3
 License: GNU General Public License v2.0 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -69,6 +70,9 @@ Screenshot and layout images, Copyright 2026 Benjamin Lu
 License: GPL-2.0-or-later
 
 == Changelog ==
+
+= 0.0.3 =
+* The zip includes README.md, which the ClassicPress Directory reads for the theme's listing, and readme.txt gives the Requires CP version.
 
 = 0.0.2 =
 * chassis.json uses the settings and styles shape, with a color palette. The design is unchanged.

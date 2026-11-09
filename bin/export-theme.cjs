@@ -30,6 +30,7 @@ const files = [
 	'chassis.json', // Chassis reads the design from it.
 	'functions.php',
 	'index.php',
+	'README.md', // The ClassicPress Directory reads it for the theme's listing.
 	'readme.txt',
 	'screenshot.png',
 	'style.css',
