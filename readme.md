@@ -127,9 +127,9 @@ Some things are switched on but not finished yet, and some files are samples. Wi
 | Your theme's name, author and URIs | `themerename.json` | Nocturne's own. Fill in `to` and run `composer rename` (see [Renaming](#renaming)). `style.css` stays at version `0.0.1` for your first release. |
 | Design | `chassis.json` | Nocturne's dark design. Change a palette color in `settings.palette`, or a part of the page in `styles`. |
 | Your own styles and scripts | `resources/scss/screen.scss`, `resources/js/app.js` | Empty. Each loads once it has something in it. |
-| Header image | `app/CustomHeader/`, `public/images/headers/` | Header image support is on, with three sample images, but no template prints it. Add it to `public/views/header/default.php`, or remove the component. "Display site title and tagline" isn't wired up either. |
+| Header image | `app/CustomHeader/`, `config/_settings-headers.php` | Header image support is on, with no sample images (add your own to `public/images/headers/` and list them in the config), but no template prints it. Add it to `public/views/header/default.php`, or remove the component. "Display site title and tagline" isn't wired up either. |
 | Meta icons | `public/svg/meta-icons/` | Calendar, comment and user icons, not used yet. For post metadata, if you want icons. |
-| Layout picker images | `public/images/layouts/` | Used by Customize → Layout. `header-image.jpg` isn't used. |
+| Layout picker images | `public/images/layouts/` | Used by Customize → Layout. |
 | Menus | `config/_settings-menus.php` | Primary and Social. |
 | Widget areas | `config/_settings-sidebars.php` | Primary and Footer. |
 | Theme settings page | `app/Settings/` | Appearance → Nocturne, with recommended plugins from `config/plugins.json`. |
