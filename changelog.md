@@ -4,6 +4,7 @@
 ### Changed
 - `chassis.json` uses Chassis's `settings` and `styles` shape: each color is named once in `settings.palette` and used as `@name`, and each part of the page has its own group (`header`, `primary-menu`, `menu-button`, `content`, `post`, `widget`, `comments`, `footer`). The design is unchanged: the file produces the same CSS as before.
 - Requires Chassis 0.1.7 or later, which reads that shape.
+- Requires Backdrop Fonts 1.0.2 (`backdrop-dev/fonts` `^1.0.2`), its first tagged release with all the fonts, instead of a pinned `develop` commit. Merriweather and Fira Sans now ship with their licenses, their stylesheets are versioned so updates reach browsers, and the package loads its fonts from wherever it's installed.
 
 ## [0.0.1] - 11.06.2026
 
