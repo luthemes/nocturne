@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.0.3] - 11.09.2026
+### Added
+- `README.md` in the theme and its zip, for people using the theme: what it does, installing it, FAQ and credits. The ClassicPress Directory reads it for the theme's listing.
+
+### Changed
+- The guide for developing the theme moved from `readme.md` to `docs/development.md`.
+- `readme.txt` gives the lowest ClassicPress version, `Requires CP: 2.0`, which the ClassicPress Directory needs when it reads that file.
+- The `style.css` header has one field per line with no leading `*`, in the order the ClassicPress docs show.
+
 ## [0.0.2] - 11.08.2026
 ### Changed
 - `chassis.json` uses Chassis's `settings` and `styles` shape: each color is named once in `settings.palette` and used as `@name`, and each part of the page has its own group (`header`, `primary-menu`, `menu-button`, `content`, `post`, `widget`, `comments`, `footer`). The design is unchanged: the file produces the same CSS as before.

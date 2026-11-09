@@ -57,7 +57,7 @@ jobs:
       - run: npm run pot
       - name: Check the translation template
         run: |
-          pot=public/lang/$( sed -n 's/^ \* Text Domain: *//p' style.css ).pot
+          pot=public/lang/$( sed -n 's/^[ *]*Text Domain:[[:space:]]*\([^[:space:]]*\).*/\1/p' style.css | head -n 1 ).pot
           test -s "$pot"
           ! grep -q '<!=' "$pot"
           ! grep -q 'wordpress.org/support' "$pot"

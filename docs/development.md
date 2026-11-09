@@ -2,7 +2,7 @@
 
 Nocturne is a dark theme for ClassicPress, built on [Chassis](https://github.com/techkodeninja/chassis). It has the same design as the Novaris version of Nocturne ([novaris-dev/nocturne](https://github.com/novaris-dev/nocturne)).
 
-This readme is for developing the theme. For installing and using it, see `readme.txt`.
+This guide is for developing the theme. For installing and using it, see [`README.md`](../README.md).
 
 ## Requirements
 
@@ -37,7 +37,7 @@ npm run build
 
 `npm run build` builds the assets, then runs `npm run export`, which copies the theme into `dist/nocturne/`. Zip that folder and upload it in *Appearance → Themes → Add New*.
 
-The copy has `style.css`, `functions.php`, `index.php`, `chassis.json`, `readme.txt`, `screenshot.png`, and the `app`, `config`, `public` and `vendor` folders. It leaves out the sources (`resources`, `bin`), the dev config and `node_modules`. From `vendor`, it removes Composer's tools and any `.git` folders.
+The copy has `style.css`, `functions.php`, `index.php`, `chassis.json`, `README.md`, `readme.txt`, `screenshot.png`, and the `app`, `config`, `public` and `vendor` folders. It leaves out the sources (`resources`, `bin`), the dev config and `node_modules`. From `vendor`, it removes Composer's tools and any `.git` folders.
 
 The export stops if the assets aren't built, or if `vendor` still has the dev tools from a plain `composer install`. The folder is named after the text domain, so it follows `composer rename`. `bin/export-theme.cjs` lists what's copied.
 
@@ -124,7 +124,7 @@ Some things are switched on but not finished yet, and some files are samples. Wi
 
 | What | Where | State |
 |---|---|---|
-| Your theme's name, author and URIs | `themerename.json` | Nocturne's own. Fill in `to` and run `composer rename` (see [Renaming](#renaming)). `style.css` stays at version `0.0.1` for your first release. |
+| Your theme's name, author and URIs | `themerename.json` | Nocturne's own. Fill in `to` and run `composer rename` (see [Renaming](#renaming)). Set `Version:` in `style.css` to `0.0.1` for your first release, and rewrite `README.md` and `readme.txt` for your theme. |
 | Design | `chassis.json` | Nocturne's dark design. Change a palette color in `settings.palette`, or a part of the page in `styles`. |
 | Your own styles and scripts | `resources/scss/screen.scss`, `resources/js/app.js` | Empty. Each loads once it has something in it. |
 | Header image | `app/CustomHeader/`, `config/_settings-headers.php` | Header image support is on, with no sample images (add your own to `public/images/headers/` and list them in the config), but no template prints it. Add it to `public/views/header/default.php`, or remove the component. "Display site title and tagline" isn't wired up either. |
